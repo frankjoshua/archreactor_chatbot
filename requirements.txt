@@ -1,0 +1,7 @@
+ipywidgets
+langchain
+fastapi
+uvicorn[standard]
+openai
+chromadb
+tiktoken
