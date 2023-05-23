@@ -34,7 +34,7 @@ class ChatBot:
         ========= 
         FINAL ANSWER:"""
         PROMPT = PromptTemplate(template=template, input_variables=["summaries", "question"])
-        llm = OpenAI(temperature=0.5, model_name='text-davinci-003')
+        llm = OpenAI(temperature=0.5, model_name='gpt-3.5-turbo')
         self.chain = load_qa_with_sources_chain(llm, chain_type="stuff", prompt=PROMPT)
 
 
