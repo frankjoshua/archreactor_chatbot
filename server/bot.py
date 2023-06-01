@@ -1,6 +1,9 @@
 from dotenv import load_dotenv, find_dotenv
-if not load_dotenv(find_dotenv()):
-    raise Exception(".env not found") 
+import os
+
+if os.getenv("OPENAI_API_KEY") is None:
+    if not load_dotenv(find_dotenv()):
+        raise Exception(".env not found and OPENAI_API_KEY not set") 
 
 
 from langchain.embeddings.openai import OpenAIEmbeddings

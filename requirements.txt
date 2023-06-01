@@ -5,3 +5,5 @@ uvicorn[standard]
 openai
 chromadb
 tiktoken
+typing_extensions==4.5.0
+chainlit

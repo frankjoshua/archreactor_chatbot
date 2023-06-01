@@ -1,10 +1,16 @@
+from pydantic import BaseModel
+
+class BotRequest(BaseModel):
+    question: str
+
 from fastapi import FastAPI
 from bot import ChatBot
-from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 chat_bot = ChatBot()
 app = FastAPI()
+
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,8 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class BotRequest(BaseModel):
-    question: str
+
 
 @app.post("/")
 def root(botRequest: BotRequest):

@@ -5,4 +5,9 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 WORKDIR /home/jovyan/work
+COPY server ./server
+COPY content ./content
+WORKDIR /home/jovyan/work/server
 
+# CMD ["uvicorn", "server:app"]
+CMD ["chainlit", "run", "chainlit.py"]
