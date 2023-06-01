@@ -1,0 +1,24 @@
+---
+- hosts: all
+
+  vars:
+    OPENAI_API_KEY: "{{ lookup('env', 'OPENAI_API_KEY') }}"
+  
+  tasks:
+  - name: Start server
+    community.docker.docker_container:
+      image: frankjoshua/archreactor_bot
+      name: archreactor_bot
+      restart_policy: "always"
+      restart: yes
+      pull: yes
+      # network_mode: "host"
+      ports:
+        - "8000:8000"
+      log_driver: json-file
+      log_options:
+        max-size: "1m"
+        max-file: "2"
+      env:
+          OPENAI_API_KEY: "{{ OPENAI_API_KEY }}"
+          CHAINLIT_HOST: 0.0.0.0
