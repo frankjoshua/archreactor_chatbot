@@ -18,7 +18,7 @@ from langchain.llms import OpenAI
 
 class ChatBot:
     def __init__(self):
-        with open("../content/content.txt") as f:
+        with open("./content/content.txt") as f:
             content = f.read()
         text_splitter = CharacterTextSplitter(separator = " ", chunk_size=1000, chunk_overlap=100)
         texts = text_splitter.split_text(content)

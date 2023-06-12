@@ -9,4 +9,7 @@ def main(message: str):
     response = chat_bot(message)
     print(response)
     # send back the final answer
-    cl.send_message(response["output_text"])
+    # cl.send_message(response["output_text"])
+    cl.Message(
+        response["output_text"]
+    ).send()
