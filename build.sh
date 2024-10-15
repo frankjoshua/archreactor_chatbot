@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t frankjoshua/archreactor_bot:latest .
+docker build -t frankjoshua/excel_bot:latest .

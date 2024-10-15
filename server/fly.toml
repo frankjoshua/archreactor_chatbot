@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for twilight-violet-6497 on 2023-06-01T03:17:54Z
+# fly.toml app configuration file generated for dawn-sun-1269 on 2023-06-20T04:23:03Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "twilight-violet-6497"
+app = "dawn-sun-1269"
 primary_region = "atl"
 
 [build]
